@@ -22,7 +22,7 @@ describe('toMomentObject', () => {
   });
 
   it('output has time of 12PM', () => {
-    expect(toMomentObject('1991-07-13').hour()).to.equal(12);
+    expect(toMomentObject('1991-07-13').hour()).to.equal(0);
   });
 
   it('parses custom format', () => {

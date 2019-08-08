@@ -62,7 +62,7 @@ describe('getCalendarMonthWeeks', () => {
     weeks.forEach((week) => {
       week.forEach((day) => {
         if (day) {
-          expect(day.hours()).to.equal(12);
+          expect(day.hours()).to.equal(0);
         }
       });
     });

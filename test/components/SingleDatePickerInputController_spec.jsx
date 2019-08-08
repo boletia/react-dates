@@ -10,7 +10,7 @@ import SingleDatePickerInputController from '../../src/components/SingleDatePick
 import isSameDay from '../../src/utils/isSameDay';
 
 // Set to noon to mimic how days in the picker are configured internally
-const today = moment().startOf('day').hours(12);
+const today = moment().startOf('day').hours(0);
 
 describe('SingleDatePickerInputController', () => {
   afterEach(() => {

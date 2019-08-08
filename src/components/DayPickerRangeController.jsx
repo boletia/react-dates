@@ -1024,7 +1024,7 @@ export default class DayPickerRangeController extends React.PureComponent {
     if (focusedInput !== END_DATE) return false;
 
     if (startDate) {
-      const dayDiff = day.diff(startDate.clone().startOf('day').hour(12), 'days');
+      const dayDiff = day.diff(startDate.clone().startOf('day').hour(0), 'days');
       return dayDiff < minimumNights && dayDiff >= 0;
     }
     return isOutsideRange(moment(day).subtract(minimumNights, 'days'));
@@ -1039,7 +1039,7 @@ export default class DayPickerRangeController extends React.PureComponent {
 
     if (hoverDate && !this.isBlocked(hoverDate)) {
       const minNights = getMinNightsForHoverDate(hoverDate);
-      const dayDiff = day.diff(hoverDate.clone().startOf('day').hour(12), 'days');
+      const dayDiff = day.diff(hoverDate.clone().startOf('day').hour(0), 'days');
       return dayDiff < minNights && dayDiff >= 0;
     }
     return false;

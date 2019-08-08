@@ -15,7 +15,7 @@ import getVisibleDays from '../../src/utils/getVisibleDays';
 import { VERTICAL_SCROLLABLE } from '../../src/constants';
 
 // Set to noon to mimic how days in the picker are configured internally
-const today = moment().startOf('day').hours(12);
+const today = moment().startOf('day').hours(0);
 
 function getCallsByModifier(stub, modifier) {
   return stub.getCalls().filter(call => call.args[call.args.length - 1] === modifier);
