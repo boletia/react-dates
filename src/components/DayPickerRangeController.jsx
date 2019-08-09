@@ -568,11 +568,11 @@ export default class DayPickerRangeController extends React.PureComponent {
       const firstAllowedEndDate = startDate && startDate.clone().add(minimumNights, 'days');
 
       if (!startDate) {
-        endDate = day;
+        endDate = day.set({'hour': 23, 'minute': 59, 'second': 59});
         onDatesChange({ startDate, endDate });
         onFocusChange(START_DATE);
       } else if (isInclusivelyAfterDay(day, firstAllowedEndDate)) {
-        endDate = day;
+        endDate = day.set({ 'hour': 23, 'minute': 59, 'second': 59 });
         onDatesChange({ startDate, endDate });
         if (!keepOpenOnDateSelect) {
           onFocusChange(null);
@@ -1024,7 +1024,7 @@ export default class DayPickerRangeController extends React.PureComponent {
     if (focusedInput !== END_DATE) return false;
 
     if (startDate) {
-      const dayDiff = day.diff(startDate.clone().startOf('day').hour(0), 'days');
+      const dayDiff = day.diff(startDate.clone().startOf('day').hour(0).minute(0), 'days');
       return dayDiff < minimumNights && dayDiff >= 0;
     }
     return isOutsideRange(moment(day).subtract(minimumNights, 'days'));
@@ -1039,7 +1039,7 @@ export default class DayPickerRangeController extends React.PureComponent {
 
     if (hoverDate && !this.isBlocked(hoverDate)) {
       const minNights = getMinNightsForHoverDate(hoverDate);
-      const dayDiff = day.diff(hoverDate.clone().startOf('day').hour(0), 'days');
+      const dayDiff = day.diff(hoverDate.clone().startOf('day').hour(0).minute(0), 'days');
       return dayDiff < minNights && dayDiff >= 0;
     }
     return false;
