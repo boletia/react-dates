@@ -56,8 +56,8 @@ addDecorator(story => (
 ));
 
 setOptions({
-  name: 'REACT-DATES',
-  url: 'https://github.com/airbnb/react-dates',
+  name: 'BLT-REACT-DATES',
+  url: 'https://github.com/boletia/react-dates',
 });
 
 function loadStories() {
